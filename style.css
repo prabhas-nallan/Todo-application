@@ -1,0 +1,180 @@
+/* body{
+    margin: 0;
+    background-color: lightcoral ;
+    display: flex;
+    align-items: center;
+    justify-content: center
+} */
+*{
+    margin: 0px;
+    /* background-color: aqua; */
+    border:border-box;
+}
+.navbar{
+    height: 60px;
+    background-color: #0f1111;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.navbar h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.container{
+    background-color: lightcoral;
+    /* width: 100%;
+    height: 100vh;
+    display: flex; */
+    margin: 0;
+}
+.notes-container{
+    background-color: lightcoral;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+#newNote{
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 0.5em 0.65em;
+    color: black;
+    /* margin-top: 1em; */
+    cursor: pointer;
+}
+#newNote:hover{
+    opacity: 0.7;
+}
+.card{
+    height: 200px;
+    width: 30%;
+    /* margin: 5em 2em;
+    padding: 2em 2em; */
+    margin-top: 15px;
+    padding: 20px 0px 15px;
+    border-radius: 7px;
+    background-color: lightblue;
+}
+.card h1{
+    text-align: center;
+    text-decoration: underline wavy;
+    font-size: 20px;
+    /* font-family: Comic Sans MS, Comic Sans, cursive; */
+    font-family: Bradley Hand, cursive;
+    font-weight: 700;
+    color: rgb(6, 6, 6);
+}
+.card h2{
+    color: black;
+    font-size: 16px;
+    padding: 0.15em 2em;
+    text-decoration: double underline;
+    font-family: Bradley Hand, cursive;
+}
+.card input{
+    border-radius: 5px;
+    border: none;
+    font-size: 17px;
+    padding: 0.5em 0.65em;
+    margin: 2em 1em;
+    
+}
+.noteHead{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+}
+#add{
+    background-color: #23629F;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 0.5em 0.65em;
+    color: white;
+    cursor: pointer;
+    box-shadow: 10px white;
+}
+#add:hover{
+   opacity: 0.9;
+}
+
+#saveBtn{
+    background-color: #b58a13;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 0.5em 0.5em;
+    margin-left: 1em;
+    color: white;
+    cursor: pointer;
+}
+#saveBtn:hover{
+    opacity: 0.8;
+}
+.unlist{
+    list-style: none;
+   
+}
+li{
+    font-size: 15px;
+    font-family: Bradley Hand, cursive;
+    padding: 0.25em 0.1em;
+    width: 100%;
+    font-weight: 700;
+}
+li button{
+    border: none;
+    border-radius:5px ;
+    padding: 0.5em 0.65em;
+    color: white;
+    cursor: pointer;
+}
+#edit{
+    background-color: #048128;
+}
+#delete{
+    background-color: rgb(220, 20, 20);
+}
+#edit:hover{
+    opacity: 0.8;
+}
+#delete:hover{
+    opacity: 0.8;
+}
+#icon{
+    height: 40px;
+    width: 40px;
+}
+#heading{
+    font-size: 30px;
+}
+.card-close-Btn{
+    left: 10px;
+    border: none;
+    padding: 0.5em 0.25em;
+    cursor: pointer;
+}
+
+.check-regular{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    /* display: inline; */
+}
+.check-solid{
+    /* display: none; */
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+.add-note-input-field{
+    border: none;
+    border-radius: 9px;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 0.25em 0.5em;
+}

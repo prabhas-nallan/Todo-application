@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do list</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/close.css' rel='stylesheet'>
+</head>
+<body>
+    <nav class="navbar">
+        <img id="icon" src="./notes.png" alt="">
+        <i class="fa-solid fa-clipboard" id="heading" style="color: #e8eaee;">Plan Your Day Wisely...!</i>
+        <!-- <h1>Plan Your Day Wisely...!</h1> -->
+        <input type="text" class="add-note-input-field" placeholder="Title of the notes... ">
+        <button onclick="addNote()" id="newNote">Add a Note</button>
+        
+    </nav>
+   <div class="container">
+    <div class="notes-container"></div>
+   </div>       
+</body>
+<script src="./index.js"></script>
+</html>
