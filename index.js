@@ -28,38 +28,32 @@ function adjustCardHeight(noteId) {
     const taskList = document.querySelector(`#taskList-note${noteId}`);
     const card = document.querySelector(`#note-card${noteId}`);
 
-    // Minimum height of the card
-    const minHeight = 200; // Adjust this value based on your design
-
-    // Calculate new height based on the number of tasks
+    // Let us take minimum ht of the card as 200px
+    const minHeight = 200; 
+    // Here iam calculating new height based on the number of tasks
     const newHeight = minHeight + taskList.clientHeight;
 
     card.style.height = `${newHeight}px`;
 }
-
-
 function toggleTaskStatus(checkImg) {
     console.log("toggle status called....");
     const taskText = checkImg.closest('li').querySelector('span');
+    const editBtn = checkImg.closest('li').querySelector('#edit');
 
     if (checkImg.src.includes('square-check-regular')) {
         checkImg.src = './square-check-solid.svg';
         taskText.style.textDecoration = 'line-through'; 
-        checkImg.closest('li').querySelector('#edit').style.display = 'none'; 
+        editBtn.style.display = 'none'; 
     } else {
         checkImg.src = './square-check-regular.svg';
         taskText.style.textDecoration = 'none';  
-        checkImg.closest('li').querySelector('#edit').style.display = 'inline'; 
+        editBtn.style.display = 'inline'; 
     }
 }
-
-
-
 function deleteTask(noteId, delBtn) {
     const taskItem = delBtn.parentElement;
     taskItem.remove();
 }
-
 function editTask(editBtn) {
     const taskItem = editBtn.parentElement;
 
@@ -107,7 +101,7 @@ function addNote() {
     noteCard.className = 'card';
     noteCard.classList.add('card');
 
-    noteCard.id = `note-card${noteCount}`; // Unique ID for each card
+    noteCard.id = `note-card${noteCount}`; // Assigning unique ID for each card
 
     noteCard.innerHTML = `
         <i onclick="deleteCard(this)" class="gg-close card-close-Btn"></i>
