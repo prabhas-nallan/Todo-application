@@ -2,6 +2,7 @@
     margin: 0px;
     border:border-box;
 }
+/* Navbar stylings */
 .navbar{
     height: 60px;
     background-color: #0f1111;
@@ -10,10 +11,29 @@
     align-items: center;
     justify-content: space-evenly;
 }
-.navbar h1{
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
+.navbar #heading{
+    font-size: 2rem;
 }
+.add-note-input-field{
+    border: none;
+    border-radius: 9px;
+    font-weight: 500;
+    font-size: 1.25rem;
+    padding: 0.15rem 0.35rem;
+}
+#newNote{
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 0.5rem 0.65rem;
+    color: black;
+    cursor: pointer;
+}
+#newNote:hover{
+    opacity: 0.7;
+}
+/* Body stylings */
 .container{
     background-color: #E8514A;
     margin: 0;
@@ -26,47 +46,37 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-#newNote{
-    background-color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 15px;
-    padding: 0.5em 0.65em;
-    color: black;
-    cursor: pointer;
-}
-#newNote:hover{
-    opacity: 0.7;
-}
+
 .card{
     height: 200px;
     width: 30%;
     margin-top: 15px;
-    padding: 20px 0px 15px;
+    /* padding: 20px 0px 15px; */
+    padding: 1.25rem 0rem 1rem;
     border-radius: 7px;
     background-color: lightblue;
 }
 .card h1{
     text-align: center;
     text-decoration: underline wavy;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-family: Bradley Hand, cursive;
     font-weight: 700;
     color: rgb(6, 6, 6);
 }
 .card h2{
     color: black;
-    font-size: 16px;
-    padding: 0.15em 2em;
+    font-size: 1.1rem;
+    padding: 0.12rem 2rem;
     text-decoration: double underline;
     font-family: Bradley Hand, cursive;
 }
 .card input{
     border-radius: 5px;
     border: none;
-    font-size: 13px;
-    padding: 0.45em 0.55em;
-    margin: 1.6em 0.6em;
+    font-size: 0.7rem;
+    padding: 0.35rem 0.45rem;
+    margin: 1.4rem 0.4rem;
     
 }
 .noteHead{
@@ -77,8 +87,8 @@
     background-color: #23629F;
     border: none;
     border-radius: 5px;
-    font-size: 12px;
-    padding: 0.5em 0.65em;
+    font-size: 0.85rem;
+    padding: 0.25rem;
     color: white;
     cursor: pointer;
     box-shadow: 10px white;
@@ -134,9 +144,6 @@ li button{
     height: 40px;
     width: 40px;
 }
-#heading{
-    font-size: 30px;
-}
 .card-close-Btn{
     left: 10px;
     border: none;
@@ -154,57 +161,53 @@ li button{
     width: 20px;
     cursor: pointer;
 }
-.add-note-input-field{
-    border: none;
-    border-radius: 9px;
-    font-weight: 500;
-    font-size: 15px;
-    padding: 0.25em 0.5em;
-}
+
 
 /* Media queries */
 /* Media screen of range between 465px - 600px (Eg: iPads,Tablets) */
-@media (max-width:600px ) and (min-width:465px){
+@media screen and (min-width:481px) and (max-width:768px ) {
+    /* Navbar stylings */
     .navbar{
         height: 40px;
-        font-size: 2vw;
     }
     #icon{
         height: 25px;
         width: 25px;
     }
     .navbar #heading{
-        font-size: 15px;
+        font-size: 1.1rem;
     }
     #newNote{
-        font-size: 11px;
-        padding: 0.2em 0.35em;
+        font-size: 0.8rem;
+        padding: 0.2rem 0.35rem;
     }
     .add-note-input-field{
-        font-size: 11px;
-        padding: 0.25em 0.35em;
+        font-size: 0.9rem;
+        padding: 0.2rem 0.3rem;
     }
+    /* Body stylings */
     .card{
         height: 200px;
         width: 45%;
         margin-top: 15px;
-        padding: 15px 0px 13px; 
+        padding: 1.2rem 0rem 0.9rem;
     }
     .card h1{
-        font-size: 15px;
+        font-size: 1.2rem;
     }
     .card h2{
-        font-size: 15px;
-        padding: 0.11em 1.5em;
+        font-size: 1rem;
+        padding: 0.11rem 1.5rem;
     }
     .card input{
-        font-size: 11px;
-        padding: 0.35em 0.45em;
-        margin: 1.5em 0.7em;      
+        width: 19vw;
+        font-size: 0.8rem;
+        padding: 0.3rem 0.4rem;
+        margin: 1.4rem 0.4rem;      
     }
     #add{       
-        font-size: 12px;
-        padding: 0.4em 0.45em;
+        font-size: 0.7rem;
+        padding: 0.4rem 0.45rem;
     }
     li{
         font-size: 15px;
@@ -222,43 +225,49 @@ li button{
 }
 
 /* Media screen < 465px (mobile screens) */
-@media (max-width:465px){
+@media (max-width:480px){
+    /* Navbar stylings */
     #icon{
         height: 22px;
         width: 22px;
     }
+    .navbar{
+        height: 30px;
+    }
     .navbar #heading{
-        font-size: 13px;
+        font-size: 0.8rem;
     }
     #newNote{
-        font-size: 10px;
-        padding: 0.25em 0.3em;
+        font-size: 0.5rem;
+        padding: 0.13em 0.16em;
     }
     .add-note-input-field{
-        font-size: 10px;
-        padding: 0.2em 0.3em;
+        font-size: 0.6rem;
+        padding: 0.2rem 0.2rem;
     }
+    /* body stylings */
     .card{
         height: 200px;
         width: 75%;
         margin-top: 15px;
-        padding: 12px 0px 10px; 
+        padding: 1.19rem 0rem 0.9rem;
     }
     .card h1{
-        font-size: 14px;
+        font-size: 1.1rem;
     }
     .card h2{
-        font-size: 14px;
-        padding: 0.14em 1.7em;
+        font-size: 0.9rem;
+        padding: 0.14rem 1.7rem;
     }
     .card input{
-        font-size: 13px;
-        padding: 0.35em 0.45em;
-        margin: 1.5em 0.7em;      
+        width: 23vw;
+        font-size: 0.7rem;
+        padding: 0.3rem 0.4rem;
+        margin: 1.5rem 0.7rem;      
     }
     #add{       
-        font-size: 11px;
-        padding: 0.4em 0.45em;
+        font-size: 0.7rem;
+        padding: 0.4rem 0.4rem;
     }
     li{
         font-size: 14px;

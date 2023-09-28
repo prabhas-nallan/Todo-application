@@ -1,3 +1,4 @@
+//This function is used to add new tasks into the card
 function addTask(noteId) {
     console.log("add task called....");
     const input = document.querySelector(`#new-task-input-note${noteId}`);
@@ -24,6 +25,7 @@ function addTask(noteId) {
 
     input.value = '';
 }
+//Function used to calc the ht of the card and increasing it as user adds tasks
 function adjustCardHeight(noteId) {
     const taskList = document.querySelector(`#taskList-note${noteId}`);
     const card = document.querySelector(`#note-card${noteId}`);
@@ -35,16 +37,19 @@ function adjustCardHeight(noteId) {
 
     card.style.height = `${newHeight}px`;
 }
+//As soon as user clicks on checkbox, the following actions takes place....
 function toggleTaskStatus(checkImg) {
     console.log("toggle status called....");
     const taskText = checkImg.closest('li').querySelector('span');
     const editBtn = checkImg.closest('li').querySelector('#edit');
-
+    //unchecked turns into checked, line passes through text ensuring your task is completed and disabling edit button
     if (checkImg.src.includes('square-check-regular')) {
         checkImg.src = './square-check-solid.svg';
         taskText.style.textDecoration = 'line-through'; 
         editBtn.style.display = 'none'; 
-    } else {
+    } 
+    //checked turns into unchecked, removes line passing through text ensuring your task is still pending and enables edit button
+    else {
         checkImg.src = './square-check-regular.svg';
         taskText.style.textDecoration = 'none';  
         editBtn.style.display = 'inline'; 
@@ -59,6 +64,7 @@ function editTask(editBtn) {
 
     const editButton = taskItem.querySelector('#edit');
     const deleteButton = taskItem.querySelector('#delete');
+    //Making edit,delete btns invisible as soon as user clicks on edit button
     editButton.style.display = 'none';
     deleteButton.style.display = 'none';
 
@@ -74,7 +80,7 @@ function editTask(editBtn) {
         taskText.innerHTML = `
             <img class="check-regular" src="./square-check-regular.svg" onclick="toggleTaskStatus(this)">
             ${taskTextInput.value}`;
-
+        //Once user clicks on save btn, edit and delete options are available again
         editButton.style.display = 'inline';
         deleteButton.style.display = 'inline';
 
@@ -85,9 +91,10 @@ function editTask(editBtn) {
     taskItem.insertBefore(taskTextInput, editButton);
     taskItem.insertBefore(saveButton, editButton);
 }
-
+//Here noteCount is used to identify each card uniquely
+//Initializing noteCount with 1
 let noteCount = 1;
-
+//This function is used to add new note into the card-container
 function addNote() {
     const notesHeadInput = document.querySelector('.add-note-input-field')
     let notesHeading = notesHeadInput.value
@@ -101,8 +108,8 @@ function addNote() {
     noteCard.className = 'card';
     noteCard.classList.add('card');
 
-    noteCard.id = `note-card${noteCount}`; // Assigning unique ID for each card
-
+    noteCard.id = `note-card${noteCount}`; // Assigning unique ID for each card through noteCount
+    //Inserting all the required html content into the note card immediately after clicking on 'Add a new Note' button
     noteCard.innerHTML = `
         <i onclick="deleteCard(this)" class="gg-close card-close-Btn"></i>
         <h1><span class="noteHead">${notesHeading}</span> - Note ${noteCount} </h1>
@@ -112,10 +119,13 @@ function addNote() {
         <ul class="unlist" id="taskList-note${noteCount}"></ul>`;
 
     notesContainer.appendChild(noteCard);
+    //incrementing noteCount for each creation of a new note.
     noteCount++;
+    //Emptying the input field after clicking 'addNote' button
     notesHeadInput.value=''
 }
 
 function deleteCard(delCardBtn) {
+    //Deleting the card through .parentElement which triggers to id='card' element
     delCardBtn.parentElement.remove();
 }
